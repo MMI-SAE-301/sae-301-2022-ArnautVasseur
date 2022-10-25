@@ -5,25 +5,107 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div :class="isDark ? 'dark' : ''">
     <!--si isDark = true, Dark mode | si isDark = false, Light mode-->
+    <body class="bg-[#eee] dark:bg-gradient-to-tr dark:from-DarkGray dark:to-current duration-700">
+      
+        <!-- Rajouter une transition duration pour une transition de DarkMode à LightMode + douce -->
 
-    <body class="bg-[#eee] dark:bg-[#333] duration-700">
+        <div class="absolute gap-3 flex top-[30px] left-[30px] items-center">
+            <p class="hidden sm:flex text-lg dark:text-white duration-700">Dark Mode</p>
+            <!-- Début Bouton Switch -->
+            <label
+                class="switch relative dark:border-transparent dark:hover:border-white border-2 rounded-full duration-700">
+                <input type="checkbox" checked @click="isDark = !isDark">
+                <span class="slider round bg-white before:bg-[#222] dark:before:bg-white"></span>
+            </label>
+            <!-- Fin Bouton Switch -->
+        </div>
       <header1/>
-
+      <footer1/>
       <RouterView />
-
-      <footer class="flex">
-        <RouterLink to="/liste">
-          <div class="rounded-3xl bg-DarkerGray lg:w-96 lg:h-24 hidden lg:flex text-white text-2xl items-center justify-center">
-            Liste de montres
-          </div>
-        </RouterLink>
-      </footer>
     </body>
   </div>
 </template>
 
+<style scoped>
+.switch {
+  width: 60px;
+  height: 34px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #222;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #222;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.button1 {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  transition-duration: 300ms;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: 0.6s ease-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  translate: 0px 150px;
+}
+</style>
+
 <script lang="ts">
 import header1 from './components/header.vue'
+import footer1 from './components/footer.vue'
 
 export default {
   data() {
@@ -32,7 +114,7 @@ export default {
     };
   },
   components: {
-    header1
+    header1, footer1
   },
 };
 </script>
