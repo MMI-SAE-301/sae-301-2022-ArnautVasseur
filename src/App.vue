@@ -1,28 +1,23 @@
-<template>
-  <div :class="isDark ? 'dark' : ''">
-    <!--si isDark = true, Dark mode | si isDark = false, Light mode-->
+<script setup lang="ts">
+import { RouterLink, RouterView } from "vue-router";
+</script>
 
-    <body class="bg-[#eee] dark:bg-[#333] duration-700">
-      <!-- Rajouter une transition duration pour une transition de DarkMode à LightMode + douce -->
+<template>
+  <div :class="isDark ? 'dark' : ''" > <!--si isDark = true, Dark mode | si isDark = false, Light mode-->
+    <body class="bg-[#eee] dark:bg-[#333] duration-700"> <!-- Rajouter une transition duration pour une transition de DarkMode à LightMode + douce -->
 
       <div class="absolute gap-3 flex top-[30px] left-[30px] items-center">
         <p class="relative text-lg dark:text-white duration-700">Dark Mode</p>
         <!-- Début Bouton Switch -->
-        <label
-          class="switch relative dark:border-transparent dark:hover:border-white border-2 rounded-full duration-700">
-          <input type="checkbox" checked @click="isDark = !isDark">
+        <label class="switch relative dark:border-transparent dark:hover:border-white border-2 rounded-full duration-700">
+          <input type="checkbox" checked @click="isDark=!isDark">
           <span class="slider round bg-white before:bg-[#222] dark:before:bg-white"></span>
         </label>
         <!-- Fin Bouton Switch -->
       </div>
     </body>
-    <Suspense>
-      <router-view />
-    </Suspense>
+    <RouterView />
   </div>
-
-  <!-- Affiche les pages -->
-
 </template>
 
 <style>
