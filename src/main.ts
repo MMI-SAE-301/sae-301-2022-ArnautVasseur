@@ -4,6 +4,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import routesFromPages from "~pages";
 import { plugin, defaultConfig } from "@formkit/vue";
 
+import '../src/assets/base.css';
+
 import "./index.css";
 
 // A supprimer en "production"
