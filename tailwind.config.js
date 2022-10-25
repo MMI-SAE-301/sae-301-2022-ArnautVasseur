@@ -8,6 +8,21 @@ module.exports = {
     extend: {
       width: {
         'BoutonCompte': '225px',
+      },
+      colors: {
+        "DarkBlue": "#1e2158",
+        "DarkerGray": "#222222",
+        "LightGray": "#cccccc",
+        "DarkGray": "#333333",
+        "TransparantDarkBlue": "#1e2158"
+      },
+      borderRadius: {
+        "none": "0",
+        "xs": "0.625rem",
+        "sm": "0.9375rem",
+        "default": "1.25rem",
+        "lg": "1.875rem",
+        "full": "9999px"
       }
     },
   },
