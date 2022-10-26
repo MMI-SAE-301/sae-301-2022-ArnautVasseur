@@ -16,7 +16,6 @@ module.exports = {
         "DarkerGray": "#222222",
         "LightGray": "#cccccc",
         "DarkGray": "#333333",
-        "TransparantDarkBlue": "#1e2158"
       },
       borderRadius: {
         "none": "0",
@@ -25,6 +24,18 @@ module.exports = {
         "default": "1.25rem",
         "lg": "1.875rem",
         "full": "9999px"
+      },
+      screens: {
+
+        'sm': '400px',
+  
+        'md': '768px',
+  
+        'lg': '1024px',
+  
+        'xl': '1280px',
+  
+        '2xl': '1536px',
       }
     },
   },
