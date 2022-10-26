@@ -1,4 +1,5 @@
 <template>
+  <classicbutton/>
 </template>
 
 <script lang="ts">
