@@ -20,7 +20,7 @@ supabase.auth.onAuthStateChange((event, session) => {
     
 <template>
     <div class="bg-DarkerGray flex flex-col text-center justify-center gap-4 items-center p-10 rounded-2xl">
-        <button @click="login()" class="dark:text-white hover:underline">Connetez-vous avec votre compte Google</button>
+        <button @click="login()" class="dark:text-white hover:underline">Connetez-vous avec votre compte Facebook</button>
         <button @click="logout()" class="dark:text-white hover:underline">Déconnexion</button>
         <label id="status" class="dark:text-white"></label>
     </div>
@@ -33,12 +33,13 @@ const SUPABASE_URL = 'https://llyvwzckonhivpptzswp.supabase.co'
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxseXZ3emNrb25oaXZwcHR6c3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY2Mzc3MTYsImV4cCI6MTk4MjIxMzcxNn0.K9pciKbfEOtoUh6aJL4yZsB1kJwQMppKYYE-pX_Rb-k'
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
+
 export default {
     methods: {
         //this method allows the already registred user to log in the system.
         async login() {
             try {
-                const { data, error } = await supabase.auth.signInWithOAuth({
+                const { user, session, error } = await supabase.auth.signIn({
                     provider: 'facebook',
                 });
                 if (error) throw error;
@@ -53,7 +54,7 @@ export default {
         },
         async logout() {
             try {
-                const { error, session, error } = await supabase.auth.signOut()
+                const { user, session, error } = await supabase.auth.signOut();
                 if (error) throw error;
                 document.getElementById('status').innerHTML = 'You are disconnected !'
             } catch (error) {
