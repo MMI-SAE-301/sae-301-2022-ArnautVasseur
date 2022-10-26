@@ -13,7 +13,6 @@ export const colors = {
   "#E36028": "Orange",
   "#FFFFFF": "Blanc",
   "#2B379E": "Bleu",
-  "#00FF00": "Vert",
   "#1E878D": "Cyan",
   "#255329": "VertFoncé",
   "#379220": "Vert",

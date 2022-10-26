@@ -6,7 +6,7 @@ import Montre from './Montre.vue';
 import { colors } from '../types';
 import { materiaux } from '../types';
 import FormKitListColors from '../components/FormKitListColors.vue'
-import FormkitMatériaux from '../components/FormkitMatériaux.vue'
+import FormMateriaux from '../components/FormMateriaux.vue'
 import { useRouter } from "vue-router";
 const router = useRouter();
 
@@ -28,14 +28,18 @@ async function upsertMontre(dataForm, node) {
 </script>
 
 <template>
-    <div class="p-2" v-bind="$attrs">
+    <div class="p-2 flex flex-col md:flex-row gap-16 mt-40 items-center" v-bind="$attrs">
         <Montre class="w-64" v-bind=chaussure id="profil" />
 
-        <FormKit type="form" v-model="chaussure" @submit="upsertMontre">
-            <FormKitListColors name="bracelet" label="bracelet" />
-            <FormKitListColors name="ecran" label="ecran" />
-            <FormKitListColors name="boitier" label="boitier" />
-            <FormkitMatériaux name="materiaux" label="materiaux"/>
-        </FormKit>
+        <div class="bg-DarkerGray w-96 p-16 rounded-xl">
+            <FormKit type="form" v-model="chaussure" @submit="upsertMontre" :submit-attrs="{
+                inputClass: 'text-white border-2 border-white p-3 rounded-md hover:border-blue-300',
+            }">
+                <FormKitListColors name="bracelet" label="bracelet" />
+                <FormKitListColors name="ecran" label="ecran" />
+                <FormKitListColors name="boitier" label="boitier" />
+                <FormMateriaux name="materiaux" label="materiaux" />
+            </FormKit>
+        </div>
     </div>
 </template>
