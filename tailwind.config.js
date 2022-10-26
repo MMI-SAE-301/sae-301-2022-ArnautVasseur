@@ -11,13 +11,13 @@ module.exports = {
         'SmallClassicButton': '225px',
         'ClassicButton':'439px',
         'Card':'506px',
-        'SmallLoginCard':'453px',
-        'LoginCard':'1069px'
+        'SmallLoginCard':'480px',
+        'LoginCard':'1100px'
       },
       height:{
         'Card':'312px',
-        'SmallLoginCard':'1069px',
-        'LoginCard':'453px'
+        'SmallLoginCard':'1100px',
+        'LoginCard':'480px'
       },
       colors: {
         "DarkBlue": "#1e2158",

@@ -2,16 +2,13 @@
 import { createClient } from '@supabase/supabase-js'
 import { SupabaseAuthClient } from '@supabase/supabase-js/dist/module/lib/SupabaseAuthClient'
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
-//const { user, session, error } = await supabase.auth.signIn({
-//  provider: 'github',
-//})
 
 supabase.auth.onAuthStateChange((event, session) => {
     if (session == null) {
         document.getElementById('status').innerHTML = 'Vous n\'êtes pas connecté';
     } else {
         //alert('session value: ' + JSON.stringify(session)) 
-        document.getElementById('status').innerHTML = 'Vous êtes bien connecté avec: ' + session.user.email;
+        document.getElementById('status').innerHTML = 'Vous êtes bien connecté avec: ' + session.user.email +'( Compte Google )';
     }
 })
 
@@ -19,9 +16,8 @@ supabase.auth.onAuthStateChange((event, session) => {
     
 <template>
     <div class="bg-DarkerGray flex flex-col text-center justify-center gap-4 items-center p-10 rounded-2xl">
-        <button @click="login()" class="dark:text-white hover:underline">Connetez-vous avec votre compte Google</button>
-        <button @click="logout()" class="dark:text-white hover:underline">Déconnexion</button>
-        <label id="status" class="dark:text-white"></label>
+        <button @click="login()" class="dark:text-white border-[1px] border-white rounded-xl p-3">Connetez-vous avec votre compte Google</button>
+        <button @click="logout()" class="dark:text-white border-[1px] border-white rounded-xl p-3">Déconnexion</button>
     </div>
 
 </template>
