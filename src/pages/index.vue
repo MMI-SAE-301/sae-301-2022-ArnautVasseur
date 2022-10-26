@@ -45,7 +45,7 @@
         <div class="flex flex-col -ml-32 gap-7">
           <h3 class="text-white text-2xl text-center">Consulte ici ta propre liste de montres personnalisées</h3>
           <classicbutton>
-            <RouterLink to="liste">
+            <RouterLink to="/ListeMontre">
               Liste de montres
             </RouterLink>
           </classicbutton>

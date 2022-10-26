@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { montre } from '@/types';
 withDefaults(defineProps < montre > (), {
-    Bracelet: "Blanc",
-    Ecran: "Blanc",
-    Boitier: "Blanc",
+    Bracelet: "Magenta",
+    Ecran: "Magenta",
+    Boitier: "Magenta",
 });
 </script>
 
@@ -24,11 +24,11 @@ withDefaults(defineProps < montre > (), {
             <!-- boitier -->
         <path
             d="M241.183 105.697H65.8817C30.0485 105.697 1 134.776 1 170.646V405.381C1 441.251 30.0485 470.33 65.8817 470.33H241.183C277.016 470.33 306.065 441.251 306.065 405.381V170.646C306.065 134.776 277.016 105.697 241.183 105.697Z"
-            :fill="Boitier" stroke="black" stroke-width="2" stroke-miterlimit="10" />
+            :fill="Bracelet" stroke="black" stroke-width="2" stroke-miterlimit="10" />
         
             <!-- ecran -->
         <path
             d="M223.027 139.091H84.0377C55.1252 139.091 31.687 162.604 31.687 191.609V384.418C31.687 413.423 55.1252 436.935 84.0377 436.935H223.027C251.939 436.935 275.378 413.423 275.378 384.418V191.609C275.378 162.604 251.939 139.091 223.027 139.091Z"
-            :fill="Ecran" stroke="black" stroke-width="2" stroke-miterlimit="10" />
+            :fill="Bracelet" stroke="black" stroke-width="2" stroke-miterlimit="10" />
     </svg>
 </template>

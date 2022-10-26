@@ -1,7 +1,7 @@
 <template>
   <div class="flex absolute justify-around items-center bg-DarkBlue bg-opacity-30 w-full h-32 xl:h-64 bottom-0">
     <div>
-      <RouterLink to="/liste">
+      <RouterLink to="/ListeMontre">
         <div
           class="rounded-3xl bg-DarkerGray opacity-100 w-44 h-14 text-lg xl:w-96 xl:h-24 flex text-white xl:text-2xl items-center justify-center">
           Liste de montres
