@@ -27,6 +27,6 @@ export const materiaux = [
   },
   {
     value: "src/assets/Métal.jpg",
-    label: "Métal",
+    label: "Metal",
   },
 ];

@@ -6,6 +6,7 @@ import Montre from './Montre.vue';
 import { colors } from '../types';
 import { materiaux } from '../types';
 import FormKitListColors from '../components/FormKitListColors.vue'
+import FormkitMatériaux from '../components/FormkitMatériaux.vue'
 import { useRouter } from "vue-router";
 const router = useRouter();
 
@@ -34,6 +35,7 @@ async function upsertMontre(dataForm, node) {
             <FormKitListColors name="bracelet" label="bracelet" />
             <FormKitListColors name="ecran" label="ecran" />
             <FormKitListColors name="boitier" label="boitier" />
+            <FormkitMatériaux name="materiaux" label="materiaux"/>
         </FormKit>
     </div>
 </template>
