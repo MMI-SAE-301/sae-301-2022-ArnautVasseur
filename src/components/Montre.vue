@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Montre } from '@/types';
-withDefaults(defineProps < Montre > (), {
+import type { montre } from '@/types';
+withDefaults(defineProps < montre > (), {
     Bracelet: "Blanc",
     Ecran: "Blanc",
     Boitier: "Blanc",

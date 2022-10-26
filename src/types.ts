@@ -1,4 +1,4 @@
-export interface Montre {
+export interface montre {
   Bracelet?: string;
   Ecran?: string;
   Boitier?: string;
