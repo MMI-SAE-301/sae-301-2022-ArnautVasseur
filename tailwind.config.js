@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       width: {
         'BoutonCompte': '225px',
+        'SmallClassicButton': '225px',
+        'ClassicButton':'439px'
       },
       colors: {
         "DarkBlue": "#1e2158",

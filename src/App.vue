@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div :class="isDark ? 'dark' : ''">
     <!--si isDark = true, Dark mode | si isDark = false, Light mode-->
-    <body class="bg-[#eee] dark:bg-gradient-to-tr dark:from-DarkGray dark:to-current duration-700">
+    <body class="bg-gradient-to-tr from-LightGray to-[#aaa] dark:bg-gradient-to-tr dark:from-DarkGray dark:to-current duration-700">
       
         <!-- Rajouter une transition duration pour une transition de DarkMode à LightMode + douce -->
 
