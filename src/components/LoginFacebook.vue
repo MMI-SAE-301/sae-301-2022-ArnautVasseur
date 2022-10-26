@@ -6,6 +6,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 //  provider: 'github',
 //})
 
+
 supabase.auth.onAuthStateChange((event, session) => {
     if (session == null) {
         document.getElementById('status').innerHTML = 'Vous n\'êtes pas connecté';
@@ -32,28 +33,13 @@ const SUPABASE_URL = 'https://llyvwzckonhivpptzswp.supabase.co'
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxseXZ3emNrb25oaXZwcHR6c3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY2Mzc3MTYsImV4cCI6MTk4MjIxMzcxNn0.K9pciKbfEOtoUh6aJL4yZsB1kJwQMppKYYE-pX_Rb-k'
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
-
 export default {
     methods: {
-        //this method allows a new user to sign up the system. Once done, the user receives an email
-        //asking for account validation. Once the validation made the user is added to the system
-        async register() {
-            try {
-                const { user, session, error } = await supabase.auth.signUp({
-                    email: this.email,
-                    password: this.passwd,
-                });
-                if (error) throw error;
-                document.getElementById('status').innerHTML = 'Please validate the received email!'
-            } catch (error) {
-                alert(error.error_description || error.message);
-            }
-        },
         //this method allows the already registred user to log in the system.
         async login() {
             try {
-                const { user, session, error } = await supabase.auth.signIn({
-                    provider: 'google',
+                const { data, error } = await supabase.auth.signInWithOAuth({
+                    provider: 'facebook',
                 });
                 if (error) throw error;
             } catch (error) {
@@ -67,7 +53,7 @@ export default {
         },
         async logout() {
             try {
-                const { user, session, error } = await supabase.auth.signOut();
+                const { error, session, error } = await supabase.auth.signOut()
                 if (error) throw error;
                 document.getElementById('status').innerHTML = 'You are disconnected !'
             } catch (error) {
