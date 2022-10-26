@@ -9,7 +9,11 @@ module.exports = {
       width: {
         'BoutonCompte': '225px',
         'SmallClassicButton': '225px',
-        'ClassicButton':'439px'
+        'ClassicButton':'439px',
+        'Card':'506px'
+      },
+      height:{
+        'Card':'312px'
       },
       colors: {
         "DarkBlue": "#1e2158",
@@ -36,6 +40,9 @@ module.exports = {
         'xl': '1280px',
   
         '2xl': '1536px',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       }
     },
   },
