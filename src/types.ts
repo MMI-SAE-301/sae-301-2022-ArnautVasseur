@@ -1,7 +1,7 @@
 export interface montre {
-  Bracelet?: string;
-  Ecran?: string;
-  Boitier?: string;
+  bracelet?: string;
+  ecran?: string;
+  boitier?: string;
 }
 
 export const colors = {

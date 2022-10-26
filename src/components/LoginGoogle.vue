@@ -8,7 +8,7 @@ supabase.auth.onAuthStateChange((event, session) => {
         document.getElementById('status').innerHTML = 'Vous n\'êtes pas connecté';
     } else {
         //alert('session value: ' + JSON.stringify(session)) 
-        document.getElementById('status').innerHTML = 'Vous êtes bien connecté avec: ' + session.user.email +'( Compte Google )';
+        document.getElementById('status').innerHTML = 'Vous êtes bien connecté avec: ' + session.user.email;
     }
 })
 

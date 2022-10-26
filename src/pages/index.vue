@@ -15,7 +15,7 @@
         </card>
         <div>
           <classicbutton class="ml-9 mb-14">
-            <RouterLink to="/personnalisation">
+            <RouterLink to="/personnaliser">
               Personnaliser
             </RouterLink>
           </classicbutton>
