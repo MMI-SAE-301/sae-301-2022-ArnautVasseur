@@ -8,24 +8,31 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 supabase.auth.onAuthStateChange((event, session) => {
     if (session == null) {
-        document.getElementById('status').innerHTML = 'You are not logged !!!';
+        document.getElementById('status').innerHTML = 'Vous n\'êtes pas connecté';
     } else {
         //alert('session value: ' + JSON.stringify(session)) 
-        document.getElementById('status').innerHTML = 'You are logged with the email: ' + session.user.email;
+        document.getElementById('status').innerHTML = 'Vous êtes bien connecté: ' + session.user.email;
     }
 })
 
 </script>
     
 <template>
-    <div>
-        <h1>{{ msg }}</h1>
-        <p>
-            Please login if you have an account or register :
-        </p>
-        <button @click="login()">Sign In</button><br>
-        <button @click="logout()">Sign Out</button><br>
-        <label id="status">You are not yet logged ! </label>
+    <div
+        class="bg-DarkBlue bg-opacity-30 w-SmallLoginCard h-SmallLoginCard lg:w-LoginCard lg:h-LoginCard rounded-2xl p-10">
+        <h2 class="dark:text-white text-2xl">Connexion avec comptes tiers</h2>
+        <div class="flex">
+            <div class="flex flex-col">
+                <div class="bg-DarkerGray">
+                    <img src="@/assets/Facebook.png" alt="LogoFacebook">
+                    <button @click="login()" class="dark:text-white">Connete-toi avec ton compte Facebook</button>
+                </div>
+            </div>
+            <div>
+                <button @click="logout()" class="dark:text-white">Sign Out</button>
+            </div>
+        </div>
+        <label id="status"></label>
     </div>
 </template>
     
