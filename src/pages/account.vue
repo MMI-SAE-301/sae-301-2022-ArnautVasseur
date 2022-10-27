@@ -1,19 +1,4 @@
 <script setup lang="ts">
-import { createClient } from '@supabase/supabase-js'
-import { SupabaseAuthClient } from '@supabase/supabase-js/dist/module/lib/SupabaseAuthClient'
-const SUPABASE_URL = 'https://llyvwzckonhivpptzswp.supabase.co'
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxseXZ3emNrb25oaXZwcHR6c3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY2Mzc3MTYsImV4cCI6MTk4MjIxMzcxNn0.K9pciKbfEOtoUh6aJL4yZsB1kJwQMppKYYE-pX_Rb-k'
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
-
-
-supabase.auth.onAuthStateChange((event, session) => {
-    if (session == null) {
-        document.getElementById('status').innerHTML = 'Vous n\'êtes pas connecté';
-    } else {
-        //alert('session value: ' + JSON.stringify(session)) 
-        document.getElementById('status').innerHTML = 'Vous êtes bien connecté avec: ' + session.user.email + '( Compte Facebook )';
-    }
-})
 
 </script>
 
