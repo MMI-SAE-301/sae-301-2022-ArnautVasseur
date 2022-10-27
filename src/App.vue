@@ -24,7 +24,9 @@ import { RouterLink, RouterView } from "vue-router";
 
       <header1 />
 
-      <RouterView />
+      <Suspense>
+        <RouterView />
+      </Suspense>
       
       <footer1 />
 

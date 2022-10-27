@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { createClient } from '@supabase/supabase-js'
 import { SupabaseAuthClient } from '@supabase/supabase-js/dist/module/lib/SupabaseAuthClient'
 const SUPABASE_URL = 'https://llyvwzckonhivpptzswp.supabase.co'
@@ -35,7 +35,7 @@ supabase.auth.onAuthStateChange((event, session) => {
 
 </template>
 
-<script>
+<script lang="ts">
 import LoginGoogle from '../components/LoginGoogle.vue'
 import LoginFacebook from '../components/LoginFacebook.vue'
 
